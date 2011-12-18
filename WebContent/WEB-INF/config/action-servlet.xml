@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean name="/role" class="com.itsol.back.action.RoleAction" singleton="false">
+		<property name="roleService">
+			<ref bean="roleService" />
+		</property>
+	</bean>
+	<bean name="/profile" class="com.itsol.back.action.ProfileAction" singleton="false">
+		<property name="profileService">
+			<ref bean="profileService" />
+		</property>
+		<property name="roleService">
+			<ref bean="roleService" />
+		</property>
+	</bean>
+</beans>
