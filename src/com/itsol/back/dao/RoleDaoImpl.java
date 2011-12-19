@@ -11,14 +11,12 @@ import com.itsol.core.dao.BaseDao;
 
 public class RoleDaoImpl extends BaseDao implements RoleDao{
 
-	@Override
 	public void save(Role role) {
 		getHibernateTemplate().save(role);
 	}
 
 	public List<Role> findAll(){
-		Criteria criteria = getHibernateTemplate().getSessionFactory().
-		getCurrentSession().createCriteria(Role.class);
+		Criteria criteria = getCriteria(Role.class);
 		return criteria.list();
 	}
 	
